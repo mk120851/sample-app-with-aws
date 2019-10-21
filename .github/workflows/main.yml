@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: install alpine-curl
+        uses: docker://byrnedo/alpine-curl
+      - uses: docker://byrnedo/alpine-curl
+      - name: curl test
+        run: |
+         curl https://www.google.com -I
