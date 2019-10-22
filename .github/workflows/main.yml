@@ -9,7 +9,7 @@ jobs:
   curl:
     runs-on: ubuntu-latest
     steps:
-    - uses: docekr://byrnedo/alpine-curl:latest
+    - uses: docekr://byrnedo/alpine-curl
     - name: curl
       run: | 
         curl -X POST https://app.autify.com/api/v1/schedules/649 -H "Authorization:Bearer ${{ secrets.Autify_KEY_TOKEN }}"
