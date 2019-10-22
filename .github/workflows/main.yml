@@ -13,4 +13,4 @@ jobs:
         uses: docker://byrnedo/alpine-curl:latest
       - name: curl test
         run: |
-         curl https://www.google.com
+         curl -X POST -H "Authorization: Bearer 1RdG7oQ5GtBN88JCWApJ" https://app.autify.com/api/v1/schedules/649
