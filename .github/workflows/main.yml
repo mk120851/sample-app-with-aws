@@ -9,6 +9,7 @@ jobs:
   curl:
     runs-on: ubuntu-latest
     steps:
+    - uses: docekr://byrnedo/alpine-curl:latest
     - name: curl
       uses: docekr://byrnedo/alpine-curl:latest
       with:
