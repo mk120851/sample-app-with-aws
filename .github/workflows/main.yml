@@ -11,7 +11,6 @@ jobs:
     steps:
     - uses: docekr://byrnedo/alpine-curl:latest
     - name: curl
-      uses: docekr://byrnedo/alpine-curl:latest
-      with:
-        args: -X POST https://app.autify.com/api/v1/schedules/649 -H "Authorization:Bearer ${{ secrets.Autify_KEY_TOKEN }}"
+      run: | 
+        curl -X POST https://app.autify.com/api/v1/schedules/649 -H "Authorization:Bearer ${{ secrets.Autify_KEY_TOKEN }}"
 
