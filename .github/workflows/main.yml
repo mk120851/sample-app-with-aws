@@ -12,5 +12,5 @@ jobs:
     - name: curl
       uses: wei/curl@v1
       with:
-        args: -X POST https://app.autify.com/api/v1/schedules/690 -H "Authorization:Bearer 1RdG7oQ5GtBN88JCWApJ"
+        args: -X GET https://www.google.com/
 
