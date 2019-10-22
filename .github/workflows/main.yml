@@ -6,11 +6,12 @@ on:
       - master
 
 jobs:
-  build:
+  curl:
     runs-on: ubuntu-latest
     steps:
-      - name: install alpine-curl
-        uses: docker://byrnedo/alpine-curl:latest
-      - name: curl test
-        run: |
-         curl -X POST -H "Authorization: Bearer 1RdG7oQ5GtBN88JCWApJ" https://app.autify.com/api/v1/schedules/649
+    - name: curl
+      uses: wei/curl@v1
+      with:
+        args: | 
+          -X POST -H "Authorization: Bearer 1RdG7oQ5GtBN88JCWApJ" https://app.autify.com/api/v1/schedules/690
+
