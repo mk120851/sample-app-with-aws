@@ -6,16 +6,11 @@ on:
       - master
 
 jobs:
-  test:
-    name: test
+  curl:
     runs-on: ubuntu-latest
-    
     steps:
-    - uses: docker://byrnedo/alpine-curl:latest
-    - name: Use curl
-      uses: docker://byrnedo/alpine-curl:latest
-
-    - name: run curl
-      run: | 
-        curl -X POST https://app.autify.com/api/v1/schedules/649 -H "Authorization:Bearer ${{ secrets.Autify_KEY_TOKEN }}"
-
+    - uses: actions/checkout@master
+    - name: curl
+      uses: wei/curl@v1
+      with:
+        args: -X POST https://app.autify.com/api/v1/schedules/649 -H "Authorization:Bearer ${{ secrets.Autify_KEY_TOKEN }}"
