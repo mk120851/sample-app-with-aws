@@ -11,4 +11,7 @@ jobs:
     steps:
     - name: Create issue using REST API
       run: |
-        curl POST https://app.autify.com/api/v1/schedules/649 -H "Authorization:Bearer ${{ secrets.Autify_KEY_TOKEN }}"
+        curl --request POST \
+        --url https://app.autify.com/api/v1/schedules/649 \
+        --header "Authorization:Bearer ${{ secrets.Autify_KEY_TOKEN }}" \
+        --header 'content-type: application/json' \
