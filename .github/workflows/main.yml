@@ -9,8 +9,6 @@ jobs:
   curl:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: curl
-      uses: wei/curl@v1
-      with:
-        args: -X POST https://app.autify.com/api/v1/schedules/649 -H "Authorization:Bearer ${{ secrets.Autify_KEY_TOKEN }}"
+    - name: Create issue using REST API
+      run: |
+        curl POST https://app.autify.com/api/v1/schedules/649 -H "Authorization:Bearer ${{ secrets.Autify_KEY_TOKEN }}"
